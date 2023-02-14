@@ -1,9 +1,10 @@
 from aiogram import Bot, Dispatcher, executor, types
-from config import API_TOKEN, HELP_COMMAND
+from config import config
+from lexicon import lexicon
 import db_connect
 
 
-bot = Bot(token=API_TOKEN)
+bot = Bot(token=config.tg_bot.token)
 dp = Dispatcher(bot)
 
 
@@ -16,7 +17,7 @@ async def send_welcome(message: types.Message):
 
 @dp.message_handler(commands=['help'])
 async def help_command(message: types.Message):
-    await message.answer(text=HELP_COMMAND)
+    await message.answer(text=lexicon['help_menu'])
     await message.delete()
     print("Список команд")
 

@@ -2,15 +2,6 @@ from dataclasses import dataclass
 from environs import Env
 
 
-HELP_COMMAND = """
-/start - Приветствие
-/help - Список команд
-/spending - Внести траты в формате: /spending категория_трат сумма \n(НАПРИМЕР: /spending цветы 570.99)
-/expense - Выводит сколько вы потратили
-/category - Выводит сколько вы потратили по категориям \n(НАПРИМЕР: /category цветы)
-"""
-
-
 @dataclass
 class DatabaseConfig:
     dbname: str

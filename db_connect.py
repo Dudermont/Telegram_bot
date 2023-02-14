@@ -1,9 +1,13 @@
 import psycopg2
 # from psycopg2 import Error
 # from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
-from config import DB_CONECTION
+from config import config
+from lexicon import lexicon
 
-conn = DB_CONECTION
+conn = psycopg2.connect(dbname=config.db.dbname,
+                        user=config.db.user,
+                        password=config.db.password,
+                        host=config.db.host)
 
 cursor = conn.cursor()
 
@@ -15,19 +19,19 @@ def show_all():
     return res
 
 
-def all_users():
+def _all_users():
     cursor.execute("SELECT * FROM users")
     res = cursor.fetchall()
     return res
 
 
 def add_user(user, name):
-    res = all_users()
+    res = _all_users()
     if len(res) == 0:
         cursor.execute("INSERT INTO users (user_name) VALUES (%s)", (user,))
         conn.commit()
         print("Пользователь добавлен в базу")
-        return f'Добро пожаловать, {name}. \nВаша учетная запись зарегистрирована. \nНапишите /help или нажмите на команду, чтобы узнать, что может бот'
+        return f'Добро пожаловать, {name}.' + lexicon['registration']
     for i in range(len(res)):
         if res[i][1] == user:
             print("Пользователь уже в базе")
@@ -35,7 +39,7 @@ def add_user(user, name):
     cursor.execute("INSERT INTO users (user_name) VALUES (%s)", (user, ))
     conn.commit()
     print("Пользователь добавлен в базу")
-    return f'Добро пожаловать, {name}. \nВаша учетная запись зарегистрирована. \nНапишите /help или нажмите на команду, чтобы узнать, что может бот'
+    return f'Добро пожаловать, {name}.' + lexicon['registration']
 
 
 def add_spend(category, operation_value, user):
