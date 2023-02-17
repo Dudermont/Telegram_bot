@@ -1,0 +1,10 @@
+# локальное окружение
+/venv
+
+# файлы
+test.py
+.env
+
+# .gitignore
+__pycache__/
+.idea

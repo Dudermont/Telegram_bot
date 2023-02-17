@@ -47,7 +47,7 @@ def add_spend(category, operation_value, user):
                    "WHERE user_name = %s", (category, operation_value, user))
     conn.commit()
     print("Запись добавлена")
-    return "Запись добавлена"
+    return "Запись добавлена ✅"
 
 
 def all_spend(user):
