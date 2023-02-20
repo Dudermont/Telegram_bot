@@ -24,11 +24,22 @@ def create_inline_kb(row_width: int, *args, **kwargs) -> InlineKeyboardMarkup:
 
 
 keyboard_1 = create_inline_kb(2,
-                             spending='Внести трату',
-                             expense='Потрачено всего',
-                             category='Категория трат')
+                              spending='Внести трату',
+                              expense='Потрачено всего',
+                              category='Категория трат',
+                              during='Траты за период'
+                              )
 keyboard_2 = create_inline_kb(2,
                               help='Помощь',
                               spending='Внести трату',
                               expense='Потрачено всего',
-                              category='Категория трат')
+                              category='Категория трат',
+                              during='Траты за период')
+
+spend_during_keyboard = create_inline_kb(3,
+                                         day='День',
+                                         mounth='Месяц',
+                                         year='Год',
+                                         period='Задать период')
+cancel_keyboard = create_inline_kb(1,
+                                   cancel='Отменить ввод')
