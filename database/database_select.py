@@ -20,6 +20,22 @@ select: dict = {
                  "FROM operation "
                  "INNER JOIN users USING(user_id) "
                  "WHERE operation_date = %s "
-                 "AND user_name = %s"
+                 "AND user_name = %s",
+    'month_spend': "SELECT SUM(operation_value) "
+                   "FROM operation "
+                   "INNER JOIN users USING(user_id) "
+                   "WHERE EXTRACT(MONTH FROM operation_date) = %s "
+                   "AND EXTRACT(YEAR FROM operation_date) = %s " 
+                   "AND user_name = %s",
+    'year_spend': "SELECT SUM(operation_value) "
+                  "FROM operation "
+                  "INNER JOIN users USING(user_id) "
+                  "WHERE EXTRACT(YEAR FROM operation_date) = %s "
+                  "AND user_name = %s",
+    'period_spend': "SELECT SUM(operation_value) "
+                "FROM operation "
+                "INNER JOIN users USING(user_id) "
+                "WHERE operation_date BETWEEN %s AND %s "
+                "AND user_name = %s"
 
 }

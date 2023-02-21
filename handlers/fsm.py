@@ -16,3 +16,16 @@ class FSMCategoryspend(StatesGroup):
 
 class FSMDuringDay(StatesGroup):
     fill_date = State()
+
+
+class FSMDuringMonth(StatesGroup):
+    fill_month = State()
+
+
+class FSMDuringYear(StatesGroup):
+    fill_year = State()
+
+
+class FSMDuringDuring(StatesGroup):
+    fill_first_date = State()
+    fill_second_date = State()

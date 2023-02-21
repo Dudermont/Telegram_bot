@@ -38,8 +38,51 @@ keyboard_2 = create_inline_kb(2,
 
 spend_during_keyboard = create_inline_kb(3,
                                          day='День',
-                                         mounth='Месяц',
+                                         month='Месяц',
                                          year='Год',
                                          period='Задать период')
 cancel_keyboard = create_inline_kb(1,
                                    cancel='Отменить ввод')
+
+month_keyboard = create_inline_kb(4,
+                                  january='Январь',
+                                  february='Февраль',
+                                  march='Март',
+                                  april='Апрель',
+                                  may='Май',
+                                  june='Июнь',
+                                  july='Июль',
+                                  august='Август',
+                                  september='Сентябрь',
+                                  october='Октябрь',
+                                  november='Ноябрь',
+                                  december='Декабрь')
+
+month = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august',
+         'september', 'october', 'november', 'december']
+month2 = ['Январь', 'february', 'march', 'april', 'may', 'june', 'july', 'august',
+         'september', 'october', 'november', 'december']
+month3 = {'january': 'Январь',
+          'february': 'Февраль',
+          'march': 'Март',
+          'april': 'Апрель',
+          'may': 'Май',
+          'june': 'Июнь',
+          'july': 'Июль',
+          'august': 'Август',
+          'september': 'Сентябрь',
+          'october': 'Октябрь',
+          'november': 'Ноябрь',
+          'december': 'Декабрь'}
+month4 = {'Январь': 1,
+          'Февраль': 2,
+          'Март': 3,
+          'Апрель': 4,
+          'Май': 5,
+          'Июнь': 6,
+          'Июль': 7,
+          'Август': 8,
+          'Сентябрь': 9,
+          'Октябрь': 10,
+          'Ноябрь': 11,
+          'Декабрь': 12}

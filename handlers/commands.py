@@ -20,13 +20,13 @@ async def start_command(message: types.Message):
 
 
 # Реагирует на команду /cancel
-async def cansel_command(message: types.Message, state: FSMContext):
-    await message.answer(lexicon['cancel'])
-    await state.reset_state()
+# async def cansel_command(message: types.Message, state: FSMContext):
+#     await message.answer(lexicon['cancel'])
+#     await state.reset_state()
 
 
 # Регистрация команд
 def registration_command_handler(dp: Dispatcher):
     dp.register_message_handler(help_command, commands='help')
     dp.register_message_handler(start_command, commands='start')
-    dp.register_message_handler(cansel_command, commands='cancel')
+    # dp.register_message_handler(cansel_command, commands='cancel')

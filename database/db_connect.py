@@ -69,3 +69,24 @@ def day_spend(date, username):
     res = cursor.fetchone()
     print(f"Потратили за {date}")
     return res
+
+
+def month_spend(month, year, username):
+    cursor.execute(select['month_spend'], (month, year, username))
+    res = cursor.fetchone()
+    print(f"Потратили за {month}")
+    return res
+
+
+def year_spend(year, username):
+    cursor.execute(select['year_spend'], (year, username))
+    res = cursor.fetchone()
+    print(f"Потратили за {year}")
+    return res
+
+
+def period_spend(first_year, second_year, username):
+    cursor.execute(select['period_spend'], (first_year, second_year, username))
+    res = cursor.fetchone()
+    print(f"Потратили с {first_year} по {second_year}:")
+    return res
